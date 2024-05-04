@@ -1,22 +1,24 @@
+import { useState } from "react";
 import Foursides from "./Foursides";
 
 const Board = () =>{
+    const[squares,setSquares]= useState(Array(9).fill(null))
     return (
-        <div className="Board">
+        <div className="board">
             <div className="board-row">
-                <Foursides value={0}/>
-                <Foursides value={1}/>
-                <Foursides value={2}/>
+                <Foursides value={squares[0]}/>
+                <Foursides value={squares[1]}/>
+                <Foursides value={squares[2]}/>
             </div>
             <div className="board-row">
-                <Foursides value={3}/>
-                <Foursides value={4}/>
-                <Foursides value={5}/>
+                <Foursides value={squares[3]}/>
+                <Foursides value={squares[4]}/>
+                <Foursides value={squares[5]}/>
             </div>
             <div className="board-row">
-                <Foursides value={6}/>
-                <Foursides value={7}/>
-                <Foursides value={8}/>
+                <Foursides value={squares[6]}/>
+                <Foursides value={squares[7]}/>
+                <Foursides value={squares[8]}/>
             </div>
         </div>
     )
