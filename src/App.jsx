@@ -17,6 +17,7 @@ function App() {
   // console.log(winner);
 
   // console.log(squares);
+  
   const handleSquareClick = clickedPosition=>{
 
     if(squares[clickedPosition] || winner){

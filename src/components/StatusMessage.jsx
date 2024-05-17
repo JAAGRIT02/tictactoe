@@ -1,27 +1,43 @@
-const StatusMessage = (winner,isXNext,squares)=>{
-    const noMovesLeft = squares.every(squareValue => {
-        return squareValue !== null;
-    } );
+const StatusMessage = ({winner,isXNext,squares})=>{
+    const noMovesLeft = squares.every(squaresValue =>squaresValue !== null);
     
     const nextPlayer = isXNext ? 'X':'O';
     
     const renderStatusMessage = ()=>{
         if (winner){
-            return <div>WINNER IS {winner}</div>;
+            return (
+            <>
+                WINNER IS {' '}
+                <span className={winner === 'X'?'text-green':'text-orange' }>
+                {winner}
+                </span>
+            </>);
         }
 
         if (!winner && noMovesLeft){
-            return <div>X AND O HAS TIED</div>;
+            return( 
+            <>
+                <span className="text-green">X
+                </span> AND {' '}
+                <span className="text-orange">O
+                </span> HAS TIED
+            </>);
         }
 
         if (!winner && !noMovesLeft){
-            return <div>THE NEXT PLAYER IS {nextPlayer}</div>
+            return (
+            <>
+                THE NEXT PLAYER IS {''}
+                <span className={isXNext?'text-green':'text-orange'}>
+                {nextPlayer}
+                </span>
+            </>);
         }
 
         return null;
     }
 
-    return <div className="status-message">{renderStatusMessage()}</div>;
+    return <h2 className="status-message"> {renderStatusMessage()} </h2>;
   
 };
 
