@@ -1,4 +1,3 @@
-
 import Foursides from "./Foursides";
 
 const Board = ({squares,handleSquareClick }) =>{

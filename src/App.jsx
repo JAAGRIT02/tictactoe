@@ -9,6 +9,7 @@ function App() {
   const[squares,setSquares]= useState(Array(9).fill(null));
   const[isXNext,setIsXNext]= useState(false);
 
+  console.log(squares);
   const handleSquareClick = clickedPosition=>{
 
     if(squares[clickedPosition]){
@@ -36,7 +37,7 @@ function App() {
   <>
   <div className='app'>
     <h2>NEXT PLAYER IS SOMEBODY</h2>
-    <Board square = {squares} handleSquareClick = {handleSquareClick}/>
+    <Board squares = {squares} handleSquareClick = {handleSquareClick}/>
   </div>
   </>
   )
