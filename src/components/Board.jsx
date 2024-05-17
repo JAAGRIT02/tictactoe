@@ -1,36 +1,8 @@
-import { useState } from "react";
+
 import Foursides from "./Foursides";
 
-const Board = () =>{
-    const[squares,setSquares]= useState(Array(9).fill(null));
-    const[isXNext,setIsXNext]= useState(false);
-
-
-
-    console.log(squares);
-
-    const handleSquareClick = clickedPosition=>{
-        
-        if(squares[clickedPosition]){
-            return;
-        }
-        
-        setSquares(currnetSquares =>
-        {
-
-            return currnetSquares.map((squaresValue,position)=>
-            {
-                if (clickedPosition === position)
-                {
-                    return isXNext ? 'X' : 'O';
-                }
-                return squaresValue;
-            
-            });
-        });
-        setIsXNext(currentIsXNext => !currentIsXNext)
-    };
-    
+const Board = ({squares,handleSquareClick }) =>{
+  
     const renderSquare = position =>{
         return(
             <Foursides value={squares[position]} 
