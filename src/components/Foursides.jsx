@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
-const Foursides = ({ value })=>{
+const Foursides = ({ value,onClick })=>{
     return (
-        <button type="button" className="square">
+        <button type="button" className="square" onClick={onClick}>
             {value}
         </button>
     );
