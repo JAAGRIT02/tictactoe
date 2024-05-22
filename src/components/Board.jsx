@@ -1,11 +1,15 @@
 import Foursides from "./Foursides";
 
-const Board = ({squares,handleSquareClick }) =>{
+const Board = ({squares,handleSquareClick,winningSquares }) =>{
   
     const renderSquare = position =>{
+
+        const isWinningSquare = winningSquares.includes(position)
+
         return(
             <Foursides value={squares[position]} 
-            onClick={()=>handleSquareClick(position)}/>
+            onClick={()=>handleSquareClick(position)}
+            isWinningSquare = {isWinningSquare}/>
         )
     }
 
